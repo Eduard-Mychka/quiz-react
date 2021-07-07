@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ActiveQuiz from '../../component/ActiveQuiz'
+
 import './Quiz.scss'
 
 export default class Quiz extends Component {
@@ -10,7 +12,10 @@ export default class Quiz extends Component {
   render() {
     return (
       <div className="quiz">
-        <h1>Quiz</h1>
+        <div className="quiz-wrapper">
+          <h1>Quiz</h1>
+          <ActiveQuiz/>
+        </div>
       </div>
     )
   }
