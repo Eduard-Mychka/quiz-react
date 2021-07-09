@@ -9,8 +9,22 @@
   &:hover {
     background: rgb(33, 59, 50);
     color: rgb(0, 199, 133) ;
-    box-shadow: -1px -1px 2px rgb(115, 224, 188), 1px 1px 2px rgb(115, 224, 188);
+    box-shadow: -1px -1px 2px rgb(115, 224, 188), 
+                1px 1px 2px rgb(115, 224, 188);
     transition: all .2s ease-in-out;
-    // transition: color .2s ease-in-out;
   }
+}
+
+.answer-item.success {
+  background-color: rgb(57, 255, 73);
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  letter-spacing: 1;
+}
+
+.answer-item.error {
+  background-color: #ff3131;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  letter-spacing: 1;
 }
