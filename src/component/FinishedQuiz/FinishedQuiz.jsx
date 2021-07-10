@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 import './FinishedQuiz.scss';
 
@@ -42,14 +43,16 @@ const FinishedQuiz = (props) => {
         >
           Повторить
         </Button>
-        <Button
-          // onClick={props.onRetry}
-          color="secondary"
-          variant="contained"
-          size="small"
-        >
-          Перейти в список текстов
-        </Button>            
+        <Link to="/">
+          <Button
+            // onClick={props.onRetry}
+            color="secondary"
+            variant="contained"
+            size="small"
+          >
+            Перейти в список текстов
+          </Button>    
+        </Link>
       </div>
     </div>
     </>
