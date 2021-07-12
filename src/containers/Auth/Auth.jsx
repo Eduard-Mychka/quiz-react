@@ -7,12 +7,13 @@ import is from 'is_js'
 export default class Auth extends Component {
 
   state = {
+    isFormValid: false,
     formControls: {
       email: {
         value: '',
         type: 'email',
         label: 'Email',
-        errorMessage: 'Введите корректный email',
+        errorMessage: 'Enter correct - email !',
         valid: false,
         touched: false,
         validation: {
@@ -24,7 +25,7 @@ export default class Auth extends Component {
         value: '',
         type: 'password',
         label: 'Password',
-        errorMessage: 'Введите корректный password',
+        errorMessage: 'Enter correct - password !',
         valid: false,
         touched: false,
         validation: {
@@ -79,7 +80,12 @@ export default class Auth extends Component {
 
     formControls[controlName] = control
 
-    this.setState({ formControls })
+    let isFormValid = true
+    Object.keys(formControls).forEach(name => {
+      isFormValid = formControls[name].valid && isFormValid
+    })
+
+    this.setState({ formControls, isFormValid })
   }
 
   renderInputs() {
@@ -104,28 +110,32 @@ export default class Auth extends Component {
   render() {
     return (
       <div className="auth">
-        <div>
-          <h1>Authorization</h1>
+        <div className="container">
           <form onSubmit={this.submitHandler} className="auth-form">
+          <h1>Login Form</h1>
             { this.renderInputs() }
-            <Button
-              className=""
-              onClick={this.loginHandler}
-              color="primary"
-              size="small"
-              variant="contained"
-            >
-              Sign In
-            </Button>
-            <Button
-              className=""
-              onClick={this.registerHandler}
-              color="secondary"
-              size="small"
-              variant="contained"
-            >
-              Sign Up
-            </Button>
+            <div className="auth-form-btn">
+              <Button
+                className="w-50 h-25 me-3"
+                onClick={this.loginHandler}
+                color="primary"
+                size="small"
+                variant="contained"
+                disabled={!this.state.isFormValid}
+              >
+                Sign In
+              </Button>
+              <Button
+                className="w-50 h-25"
+                onClick={this.registerHandler}
+                color="secondary"
+                size="small"
+                variant="contained"
+                disabled={!this.state.isFormValid}
+              >
+                Sign Up
+              </Button>
+            </div>
           </form>
         </div>
       </div>

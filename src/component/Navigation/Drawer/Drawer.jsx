@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom'
 import './Drawer.scss'
 
 const links = [
-  {to: '/', label: 'List', exact: true},
+  {to: '/', label: 'Test List', exact: true},
   {to: '/auth', label: 'Authorization', exact: false},
-  {to: '/quiz-creator', label: 'Create Test', exact: false},
+  {to: '/quiz-creator', label: 'Creation Test', exact: false},
 ]
 
 export default class Drawer extends Component {

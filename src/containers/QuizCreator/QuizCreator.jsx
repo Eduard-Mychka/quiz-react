@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 
+import './QuizCreator.scss';
+
 export default class QuizCreator extends Component {
   render() {
     return (
-      <div>
-        <h1>Quiz Creator</h1>
+      <div className="quiz-creator"> 
+        <div>
+          <h1>Creation Test</h1>
+        </div>
       </div>
     )
   }

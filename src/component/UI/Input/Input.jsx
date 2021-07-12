@@ -17,9 +17,7 @@ const Input = (props) => {
 
   return (
     <div className={cls.join(' ')}>
-      <label 
-        htmlFor={htmlFor}
-      >
+      <label htmlFor={htmlFor}>
         {props.label}
       </label>
       <input 
@@ -29,8 +27,7 @@ const Input = (props) => {
         onChange={props.onChange}
       />
 
-      {isInvalid(props) ? <span>{props.errorMessage || 'Ведите верное значение'}</span> : null}
-      
+      {<span>{ isInvalid(props) ? (props.errorMessage || 'Ведите верное значение')  : null }</span>}
     </div>
   );
 }
