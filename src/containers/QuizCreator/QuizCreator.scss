@@ -1,4 +1,29 @@
 .quiz-creator {
-  color: black;
-  background-color: rgb(126, 126, 126);
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  flex-grow: 1;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  background: url(./bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.containere {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.quiz-creator h1 {
+  text-align: center;
+}
+
+.quiz-creator form {
+  background-color: rgba(255, 255, 255, 0.329);
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
 }

@@ -27,7 +27,7 @@ const Input = (props) => {
         onChange={props.onChange}
       />
 
-      {<span>{ isInvalid(props) ? (props.errorMessage || 'Ведите верное значение')  : null }</span>}
+      {<span className="error-message">{ isInvalid(props) ? (props.errorMessage || 'Ведите верное значение')  : null }</span>}
     </div>
   );
 }

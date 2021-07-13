@@ -1,11 +1,10 @@
 .input {
-	margin-bottom: 15px;
+  height: 85px;
 
 	label {
-		margin-bottom: 3px;
-		padding: 0;
 		display: block;
-		color: #313131;
+		color: #6d008f;
+    letter-spacing: 1px;
 	}
 
 	input {
@@ -13,7 +12,7 @@
     height: 35px;
 		box-sizing: border-box;
 		padding: 7px;
-		border: 2px solid #7700ff;
+		border: 2px solid #9d47ff;
 		border-radius: 8px;
 		width: 100%;
     background-color: rgb(255, 255, 255);
@@ -23,10 +22,13 @@
 	}
 
 	span {
-		color: #af0000;
-		font-size: 13px;
+		color: #b80000;
+		font-size: 12px;
 		letter-spacing: 1px;
-		font-weight: bold;
+		// font-weight: bold;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 	}
 }
 

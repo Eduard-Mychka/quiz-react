@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Input from '../../component/UI/Input/Input'
 import './Auth.scss';
 import is from 'is_js'
+import Slide from 'react-reveal/Fade';
 
 export default class Auth extends Component {
 
@@ -109,8 +110,9 @@ export default class Auth extends Component {
 
   render() {
     return (
-      <div className="auth">
+        <div className="auth">
         <div className="container">
+        <Slide top>
           <form onSubmit={this.submitHandler} className="auth-form">
           <h1>Login Form</h1>
             { this.renderInputs() }
@@ -137,8 +139,11 @@ export default class Auth extends Component {
               </Button>
             </div>
           </form>
+          </Slide>
         </div>
       </div>
+      
+      
     )
   }
 }
