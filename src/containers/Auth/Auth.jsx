@@ -142,8 +142,6 @@ export default class Auth extends Component {
           </Slide>
         </div>
       </div>
-      
-      
     )
   }
 }

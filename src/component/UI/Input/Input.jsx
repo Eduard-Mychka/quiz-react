@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './Input.scss';
 
 function isInvalid({valid, touched, shouldValidate}) {
@@ -27,7 +26,10 @@ const Input = (props) => {
         onChange={props.onChange}
       />
 
-      {<span className="error-message">{ isInvalid(props) ? (props.errorMessage || 'Ведите верное значение')  : null }</span>}
+      { <span>
+          { isInvalid(props) ? (props.errorMessage || 'Ведите верное значение') : null }
+        </span> 
+      }
     </div>
   );
 }

@@ -1,0 +1,21 @@
+.select {
+  margin-bottom: 30px;
+}
+
+.select label {
+  padding: 0;
+  display: block;
+}
+
+.select select {
+  display: block;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid rgb(75, 0, 119);
+  padding: 0 7px;
+  height: 35px;
+  width: 100%;
+  outline: none;
+  transition: all 300ms ease-in-out;
+}
+
