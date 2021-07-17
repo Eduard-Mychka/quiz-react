@@ -139,7 +139,7 @@ export default class QuizCreator extends Component {
     return (
       <div className="quiz-creator"> 
         <div className="home">
-            <a href="/auth"><i class="fas fa-home" /></a>
+            <a href="/auth"><i className="fas fa-home" /></a>
           </div>
         <div className="containere">
           <Slide top>

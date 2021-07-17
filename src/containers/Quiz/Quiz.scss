@@ -21,10 +21,12 @@
 
 .home  {
   text-decoration: none;
-  font-size: 20px;
   position: fixed;
-  top: 40px;
-  left: 70px;
+  top: 75px;
+  left: 39px;
+  transition: all, left .20s ease-in;
+  text-shadow: 2px 2px 15px rgb(0, 195, 255), 
+              -2px -2px 15px rgb(0, 195, 255);
 }
 
 .containerr i {
@@ -33,7 +35,8 @@
 }
 
 .containerr i:hover {
-  opacity: 0.7;
+  text-shadow: 2px 2px 15px rgb(0, 255, 21), 
+              -2px -2px 15px rgb(0, 255, 21);
 }
 
 .quiz-wrapper {

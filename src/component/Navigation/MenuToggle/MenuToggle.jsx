@@ -1,4 +1,5 @@
 import React from 'react';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import './MenuToggle.scss';
 
@@ -19,10 +20,12 @@ const MenuToggle = (props) => {
 
   return (
     <div>
-      <i 
-        className={cls.join(' ')}
-        onClick={props.onToggle}
-      />
+      <Tooltip title="Menu" placement="right">
+        <i 
+          className={cls.join(' ')}
+          onClick={props.onToggle}
+        />
+      </Tooltip>
     </div>
   );
 }

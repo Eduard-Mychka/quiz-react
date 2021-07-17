@@ -3,6 +3,7 @@ import ActiveQuiz from '../../component/ActiveQuiz'
 import FinishedQuiz from '../../component/FinishedQuiz'
 import axios from '../../axios/axios-quiz'
 import Loader from '../../component/UI/Loader/Loader'
+import Tooltip from '@material-ui/core/Tooltip';
 
 import './Quiz.scss'
 
@@ -12,41 +13,7 @@ export default class Quiz extends Component {
     isFinished: false,
     activeQuestion: 0,
     answerState: null, 
-    quiz: [
-      // {
-      //   question: 'Какого цвета небо ?',
-      //   rightAnswerId: 3,
-      //   id: 1,
-      //   answers: [
-      //     {text: 'Белое', id: 1},
-      //     {text: 'Голубое', id: 2},
-      //     {text: 'Синее', id: 3},
-      //     {text: 'Небесное', id: 4},
-      //   ]
-      // },
-      // {
-      //   question: 'Cтолица Польшы ?',
-      //   rightAnswerId: 3,
-      //   id: 2,
-      //   answers: [
-      //     {text: 'Краков', id: 1},
-      //     {text: 'Вроцлав', id: 2},
-      //     {text: 'Варшава', id: 3},
-      //     {text: 'Люблин', id: 4},
-      //   ]
-      // },
-      // {
-      //   question: 'Cтолица Deda ?',
-      //   rightAnswerId: 2,
-      //   id: 3,
-      //   answers: [
-      //     {text: 'Киев', id: 1},
-      //     {text: 'Трусиля', id: 2},
-      //     {text: 'Прилуки', id: 3},
-      //     {text: 'Генезис', id: 4},
-      //   ]
-      // }
-    ],
+    quiz: [],
     loader: true
   }
 
@@ -117,9 +84,10 @@ export default class Quiz extends Component {
   render() {
     return (
         <div className="containerr">
-          <div className="home">
-            <a href="/"><i class="fas fa-home" /></a>
-          </div>
+          <Tooltip title="Home" placement="right"  className="home">
+            <a href="/"><i className="fas fa-home" /></a>
+          </Tooltip>
+          
           <div className="quiz">
             <div className="quiz-wrapper">
               {
