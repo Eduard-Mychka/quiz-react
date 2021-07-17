@@ -1,17 +1,41 @@
+.containerr {
+  height: 100vh;
+  background-image: url(./bg.jpg);
+  background-size: cover;
+	background-position: center;
+  background-repeat: no-repeat;
+}
+
 .quiz {
   display: flex;
   justify-content: center;
   padding-top: 100px;
-  flex-grow: 1;
   width: 100%;
-  background: #000000;
 } 
 
 .quiz h1 {
-  color: #2c483b;
+  color: #ffffff;
+  letter-spacing: 1px;
   font-weight: 600;
 }
 
+.home  {
+  text-decoration: none;
+  font-size: 20px;
+  position: fixed;
+  top: 40px;
+  left: 70px;
+}
+
+.containerr i {
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.containerr i:hover {
+  opacity: 0.7;
+}
+
 .quiz-wrapper {
-  width: 600px;
+  width: 700px;
 }

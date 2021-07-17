@@ -12,10 +12,15 @@ const FinishedQuiz = (props) => {
     return total
   }, 0)
   return (
-    <>
+    <React.Fragment>
     <h1>That's all</h1>
     <div className="finished-quiz">
-      <h3>Your result</h3>
+      <div className="finished-quiz-head">
+        <h3>Your result</h3>
+        <p className="result">
+          Correct answers {successCount} of {props.quiz.length}
+        </p>
+      </div>
       <ul>
         {props.quiz.map((quizItem, index) => {
           const cls = [
@@ -32,8 +37,7 @@ const FinishedQuiz = (props) => {
           )
         })}
       </ul>
-      <p className="result">Правильно {successCount} из {props.quiz.length}</p>
-      <div>
+      <div className="finished-quiz-btn">
         <Button
           className="me-2"
           onClick={props.onRetry}
@@ -41,21 +45,21 @@ const FinishedQuiz = (props) => {
           size="small"
           variant="contained"
         >
-          Повторить
+          Take again
         </Button>
-        <Link to="/">
+        <Link to="/" className="btn-all-test">
           <Button
-            // onClick={props.onRetry}
+            onClick={props.onRetry}
             color="secondary"
             variant="contained"
             size="small"
           >
-            Перейти в список текстов
+            All tests
           </Button>    
         </Link>
       </div>
     </div>
-    </>
+    </React.Fragment>
   );
 }
 

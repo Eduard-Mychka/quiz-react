@@ -3,12 +3,14 @@ import Button from '@material-ui/core/Button';
 import { createControl, validate, validateForm } from '../../form/formFramework'
 import Input from '../../component/UI/Input/Input'
 import Select from '../../component/UI/Select/Select'
-import Zoom from 'react-reveal/Zoom';
+import Slide from 'react-reveal/Slide';
+import axios from '../../axios/axios-quiz'
 
 import './QuizCreator.scss';
 
 function createOptionControl(number) {
   return createControl({
+      name: 'option',
       label: `Option ${number}`,
       errorMessage: 'Value cannot be empty',
       id: number
@@ -36,12 +38,49 @@ export default class QuizCreator extends Component {
     formControls: createFormControls()
   }
 
-  submitHandler = e => {
+  submitHandler = e => e.preventDefault()
+  addQuestionHandler = e => {
     e.preventDefault()
+
+    const quiz = this.state.quiz.concat()
+    const index = quiz.length + 1
+    const {question, option1, option2, option3, option4} = this.state.formControls
+    const questionItem = {
+      question: question.value,
+      id: index,
+      rightAnswerId: this.state.rightAnswerId,
+      answers: [
+        {text: option1.value, id: option1.id},
+        {text: option2.value, id: option2.id},
+        {text: option3.value, id: option3.id},
+        {text: option4.value, id: option4.id}
+      ]
+    }
+      quiz.push(questionItem)
+
+      this.setState({
+        quiz,
+        isFormValid: false,
+        rightAnswerId: 1,
+        formControls: createFormControls()
+      })
   }
 
-  addQuestionHandler = () => {}
-  createQuizHandler = () => {}
+  createQuizHandler = async e => {
+    e.preventDefault()
+
+    try {
+      await axios.post('/quizes.json', this.state.quiz)
+      this.setState({
+        quiz: [],
+        isFormValid: false,
+        rightAnswerId: 1,
+        formControls: createFormControls()
+      })
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   changeHandler = (value, controlName) => {
     const formControls = { ...this.state.formControls }
@@ -67,6 +106,7 @@ export default class QuizCreator extends Component {
         <React.Fragment key={controlName + index}>
           <Input 
             label={control.label}
+            name={control.name}
             value={control.value}
             valid={control.valid}
             shouldValidate={!!control.validation}
@@ -99,22 +139,21 @@ export default class QuizCreator extends Component {
     return (
       <div className="quiz-creator"> 
         <div className="containere">
-          <Zoom top>
+          <Slide top>
             <form onSubmit={this.submitHandler}>
               <h1>Creation Test</h1>
               <div className="row">
               { this.renderControls() }
               </div>
-             
               { select }
               <div className="btn">
                 <Button
-                    className="w-50 h-25 me-3 text-white"
+                    className="w-50 h-25 me-3"
                     onClick={this.addQuestionHandler}
                     color="primary"
                     size="small"
                     variant="contained"
-                    // disabled={!this.state.isFormValid}
+                    disabled={!this.state.isFormValid}
                   >
                     Add Question
                   </Button>
@@ -124,13 +163,13 @@ export default class QuizCreator extends Component {
                     color="secondary"
                     size="small"
                     variant="contained"
-                    // disabled={!this.state.isFormValid}
+                    disabled={this.state.quiz.length === 0}
                   >
                     Create Test
                   </Button>
               </div>
             </form>
-          </Zoom>
+          </Slide>
         </div>
       </div>
     )

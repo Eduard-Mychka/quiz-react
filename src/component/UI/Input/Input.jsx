@@ -6,8 +6,9 @@ function isInvalid({valid, touched, shouldValidate}) {
 }
 
 const Input = (props) => {
-  const inputType = props.type || 'text'
-  const cls = ['input']
+  const inputType = props.type || 'text';
+  const option = props.name === 'option' ? 'col-6' : '';
+  const cls = ['input', option]
   const htmlFor = `${inputType}-${Math.random()}`
 
   if (isInvalid(props)) {

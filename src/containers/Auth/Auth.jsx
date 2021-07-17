@@ -4,6 +4,7 @@ import Input from '../../component/UI/Input/Input'
 import './Auth.scss';
 import is from 'is_js'
 import Slide from 'react-reveal/Fade';
+import axios from '../../axios/axios-quiz'
 
 export default class Auth extends Component {
 
@@ -37,12 +38,32 @@ export default class Auth extends Component {
     }
   }
 
-  loginHandler = () => {
-
+  loginHandler = async () => {
+    const authData = {
+      email: this.state.formControls.email.value,
+      password: this.state.formControls.password.value,
+      returnSecureToken: true
+    }
+    try {
+      const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAsTJqiAJ8JTrTzYJ17B-v0pGvM3-4BzY4', authData)
+      console.log(response)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
-  registerHandler = () => {
-
+  registerHandler = async () => {
+    const authData = {
+      email: this.state.formControls.email.value,
+      password: this.state.formControls.password.value,
+      returnSecureToken: true
+    }
+    try {
+      const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAsTJqiAJ8JTrTzYJ17B-v0pGvM3-4BzY4', authData)
+      console.log(response)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   submitHandler = (event) => {

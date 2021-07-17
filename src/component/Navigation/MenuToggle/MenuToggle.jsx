@@ -18,10 +18,12 @@ const MenuToggle = (props) => {
   }
 
   return (
-    <i 
-      className={cls.join(' ')}
-      onClick={props.onToggle}
-    />
+    <div>
+      <i 
+        className={cls.join(' ')}
+        onClick={props.onToggle}
+      />
+    </div>
   );
 }
 
