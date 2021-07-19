@@ -4,6 +4,7 @@
   background-size: cover;
 	background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .quiz {
@@ -21,22 +22,31 @@
 
 .home  {
   text-decoration: none;
+  top: 80px;
+  left: 40px;
   position: fixed;
-  top: 75px;
-  left: 39px;
-  transition: all, left .20s ease-in;
-  text-shadow: 2px 2px 15px rgb(0, 195, 255), 
-              -2px -2px 15px rgb(0, 195, 255);
+  transition: opacity, left .20s ease-in;
+
+    &:hover {
+      opacity: .6;
+    }
 }
 
-.containerr i {
+.create-test {
+  text-decoration: none;
+  position: fixed;
+  top: 120px;
+  left: 40px;
+  transition: opacity, left .20s ease-in;
+
+    &:hover {
+      opacity: .6;
+    }
+}
+
+a i {
   color: #ffffff;
   font-size: 25px;
-}
-
-.containerr i:hover {
-  text-shadow: 2px 2px 15px rgb(0, 255, 21), 
-              -2px -2px 15px rgb(0, 255, 21);
 }
 
 .quiz-wrapper {

@@ -7,12 +7,9 @@
   color: white;
   transition: opacity, left .20s ease-in;
   z-index: 100;
-  text-shadow: 2px 2px 15px rgb(0, 195, 255), 
-              -2px -2px 15px rgb(0, 195, 255);
 
   &:hover {
-    text-shadow: 2px 2px 15px rgb(0, 255, 21), 
-              -2px -2px 15px rgb(0, 255, 21);
+    opacity: .6;
   }
 }
 

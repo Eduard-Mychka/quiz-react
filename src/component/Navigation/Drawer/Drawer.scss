@@ -34,12 +34,12 @@
         color: rgb(255, 255, 255);
 				position: relative;
 				padding: 0;
-				transition: opacity .3s;
+				transition: all .1s;
         cursor: pointer;
 			}
 		}
 	}
 }
 .drawer ul li a:hover, .active {
-  background: url(../../../containers/QuizList/1.jpg);
+  background: url(../../../assets/images/3.jpg);
 }

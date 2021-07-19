@@ -4,6 +4,7 @@ import FinishedQuiz from '../../component/FinishedQuiz'
 import axios from '../../axios/axios-quiz'
 import Loader from '../../component/UI/Loader/Loader'
 import Tooltip from '@material-ui/core/Tooltip';
+import Bounce from 'react-reveal/Bounce';
 
 import './Quiz.scss'
 
@@ -85,7 +86,10 @@ export default class Quiz extends Component {
     return (
         <div className="containerr">
           <Tooltip title="Home" placement="right"  className="home">
-            <a href="/"><i className="fas fa-home" /></a>
+            <a href="http://localhost:3000/"><i className="fas fa-home" /></a>
+          </Tooltip>
+          <Tooltip title="Create Test" placement="right" className="create-test">
+            <a href="/quiz-creator"><i className="fad fa-layer-plus"/></a>
           </Tooltip>
           
           <div className="quiz">
@@ -94,19 +98,19 @@ export default class Quiz extends Component {
                 this.state.loader 
                   ? <Loader/> 
                   : this.state.isFinished
-                    ? <FinishedQuiz 
+                    ? <Bounce right><FinishedQuiz 
                         results={this.state.results}
                         quiz={this.state.quiz}
                         onRetry={this.retryHandler}
-                      />
-                    : <ActiveQuiz 
+                      /></Bounce>
+                    :  <Bounce left><ActiveQuiz 
                         answers={this.state.quiz[this.state.activeQuestion].answers}
                         question={this.state.quiz[this.state.activeQuestion].question}
                         onAnswerClick={this.onAswerClickHandler}
                         quizLength={this.state.quiz.length}
                         answerNumber={this.state.activeQuestion + 1}
                         state={this.state.answerState}
-                      />
+                      /> </Bounce>
               }
             </div>
           </div>
