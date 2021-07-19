@@ -86,7 +86,7 @@ export default class Quiz extends Component {
     return (
         <div className="containerr">
           <Tooltip title="Home" placement="right"  className="home">
-            <a href="http://localhost:3000/"><i className="fas fa-home" /></a>
+            <a href="/quiz-react/"><i className="fas fa-home" /></a>
           </Tooltip>
           <Tooltip title="Create Test" placement="right" className="create-test">
             <a href="/quiz-creator"><i className="fad fa-layer-plus"/></a>
