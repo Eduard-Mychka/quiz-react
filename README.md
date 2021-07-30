@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### Live demo
 
 > Open [Live demo](https://eduard-mychka.github.io/quiz-react/)
-
+> See the photo 
 ![cover for app](https://github.com/Eduard-Mychka/quiz-react/blob/main/src/assets/Quiz1.png 'preview')
 ![cover for app](https://github.com/Eduard-Mychka/quiz-react/blob/main/src/assets/Quiz2.png 'preview')
 ![cover for app](https://github.com/Eduard-Mychka/quiz-react/blob/main/src/assets/Quiz3.png 'preview')
