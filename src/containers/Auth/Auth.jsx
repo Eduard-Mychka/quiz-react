@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Input from '../../component/UI/Input/Input'
-import './Auth.scss';
 import is from 'is_js'
 import Slide from 'react-reveal/Fade';
-import axios from '../../axios/axios-quiz'
-
-export default class Auth extends Component {
+import { connect } from 'react-redux';
+import { auth } from '../../store/actions/auth';
+import './Auth.scss';
+class Auth extends Component {
 
   state = {
     isFormValid: false,
@@ -38,32 +38,21 @@ export default class Auth extends Component {
     }
   }
 
-  loginHandler = async () => {
-    const authData = {
-      email: this.state.formControls.email.value,
-      password: this.state.formControls.password.value,
-      returnSecureToken: true
-    }
-    try {
-      const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAsTJqiAJ8JTrTzYJ17B-v0pGvM3-4BzY4', authData)
-      console.log(response)
-    } catch (e) {
-      console.log(e)
-    }
+  loginHandler = () => {
+    this.props.auth(
+      this.state.formControls.email.value,
+      this.state.formControls.password.value,
+      true
+    )
   }
 
-  registerHandler = async () => {
-    const authData = {
-      email: this.state.formControls.email.value,
-      password: this.state.formControls.password.value,
-      returnSecureToken: true
-    }
-    try {
-      const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAsTJqiAJ8JTrTzYJ17B-v0pGvM3-4BzY4', authData)
-      console.log(response)
-    } catch (e) {
-      console.log(e)
-    }
+  registerHandler = () => {
+    this.props.auth(
+      this.state.formControls.email.value,
+      this.state.formControls.password.value,
+      false
+    )
+    
   }
 
   submitHandler = (event) => {
@@ -166,3 +155,11 @@ export default class Auth extends Component {
     )
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    auth: (email, password, isLogin) => dispatch(auth(email, password, isLogin))
+  }
+}
+
+export default connect(null, mapDispatchToProps) (Auth)

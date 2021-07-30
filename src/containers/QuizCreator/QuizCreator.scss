@@ -1,55 +1,68 @@
 .quiz-creator {
-  display: flex;
-  justify-content: center;
-  padding-top: 150px;
-  flex-grow: 1;
-  width: 100%;
-  color: rgb(255, 255, 255);
-  background: url(./bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+	width: 100%;
+	background: url(./bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+  label {
+    color: rgb(204, 173, 255);
+    letter-spacing: 2px;
+  }
+
+	h1 {
+		text-align: center;
+		margin-bottom: 50px;
+		font-weight: 400;
+		font-size: 35px;
+		letter-spacing: 1px;
+	}
+
+	form {
+		background-color: rgba(255, 255, 255, 0);
+  
+		border-radius: 5px;
+		padding: 20px;
+		font-weight: bold;
+		box-shadow: 2px 2px 12px rgba(0, 0, 0, .5), -2px -2px 12px rgba(0, 0, 0, .5);
+	}
+
+	input {
+		background-color: rgba(255, 255, 255, 0);
+		border: 2px solid rgb(75, 0, 119);
+		font-size: 19px;
+    color: rgb(236, 188, 255);
+    letter-spacing: 1px;
+	}
+
+	.input {
+		height: 85px;
+
+		span {
+			color: #ff6b6b;
+		}
+	}
 }
 
 .containere {
-  width: 100%;
-  max-width: 600px;
-  padding: 0 20px;
+	width: 100%;
+	max-width: 800px;
 }
 
-.quiz-creator h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 400;
-  font-size: 35px;
-  letter-spacing: 1px;
-}
+.select {
+	margin-top: 15px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 
-.quiz-creator form {
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 5px;
-  padding: 15px;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, .5), 
-            -2px -2px 12px rgba(0, 0, 0, .5);
-}
-
-.quiz-creator input {
-  background-color: rgba(255, 255, 255, 0);
-  border: 2px solid rgb(75, 0, 119);
-}
-
-.quiz-creator .input {
-  height: 85px;
-}
-
-.quiz-creator .input span {
-  color: #ff6b6b;
-}
-
-.quiz-creator label {
-  color: rgb(255, 255, 255);
-}
-
-.btn {
-  display: flex;
+	select {
+		font-size: 19px;
+		letter-spacing: 1px;
+		width: 400px;
+    color: rgb(0, 0, 0);
+	}
 }
