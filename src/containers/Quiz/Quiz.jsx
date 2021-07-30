@@ -26,7 +26,7 @@ class Quiz extends Component {
     return (
         <div className="containerr">
           <Tooltip title="Home" placement="right"  className="home">
-            <a href="/quiz-react/"><i className="fas fa-home" /></a>
+            <Link to="/"><i className="fas fa-home" /></Link>
           </Tooltip>
           <Tooltip title="Create Test" placement="right" className="create-test">
             <Link to="/quiz-creator"><i className="fad fa-layer-plus"/></Link>

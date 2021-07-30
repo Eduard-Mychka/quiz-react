@@ -7,6 +7,7 @@ import Slide from 'react-reveal/Slide';
 import Tooltip from '@material-ui/core/Tooltip';
 import { connect } from 'react-redux';
 import { createQuizQuestion, finishCreateQuiz } from '../../store/actions/create';
+import { Link } from 'react-router-dom';
 import './QuizCreator.scss';
 
 
@@ -135,7 +136,7 @@ class QuizCreator extends Component {
     return (
       <div className="quiz-creator"> 
         <Tooltip title="Home" placement="right"  className="home">
-          <a href="/quiz-react/"><i className="fas fa-home" /></a>
+          <Link to="/"><i className="fas fa-home" /></Link>
         </Tooltip>        
         <div className="containere">
           <Slide top>
