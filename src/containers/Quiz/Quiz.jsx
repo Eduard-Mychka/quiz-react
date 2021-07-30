@@ -6,8 +6,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Bounce from 'react-reveal/Bounce';
 import { connect } from 'react-redux'
 import { fetchQuizById, quizAnswerClick, retryQuiz } from '../../store/actions/quiz'
+import { Link } from 'react-router-dom';
 
 import './Quiz.scss'
+
 
 class Quiz extends Component {
 
@@ -27,7 +29,7 @@ class Quiz extends Component {
             <a href="/quiz-react/"><i className="fas fa-home" /></a>
           </Tooltip>
           <Tooltip title="Create Test" placement="right" className="create-test">
-            <a href="/quiz-creator"><i className="fad fa-layer-plus"/></a>
+            <Link to="/quiz-creator"><i className="fad fa-layer-plus"/></Link>
           </Tooltip>
           
           <div className="quiz">
@@ -48,7 +50,7 @@ class Quiz extends Component {
                         quizLength={this.props.quiz.length}
                         answerNumber={this.props.activeQuestion + 1}
                         state={this.props.answerState}
-                      /> </Bounce>
+                      /></Bounce>
               }
             </div>
           </div>
